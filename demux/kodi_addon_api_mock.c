@@ -1,4 +1,4 @@
-#include "kodi_addon_api_mock.h"
+#include "kodi_addon_api.h"
 #include "mpv_talloc.h"
 #include "common/msg.h"
 #include <stdlib.h>

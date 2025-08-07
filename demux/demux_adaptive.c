@@ -20,7 +20,7 @@
 #include "common/playlist.h"
 #include "osdep/io.h"
 #include "demux.h"
-#include "kodi_addon_api_mock.h"
+#include "kodi_addon_api.h"
 
 // This is a guess. The real value should be taken from the kodi headers.
 #define ADDON_INSTANCE_INPUTSTREAM 1
