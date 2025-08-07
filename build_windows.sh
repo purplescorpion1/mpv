@@ -13,7 +13,19 @@ pacman -Syu --noconfirm
 pacman -S --noconfirm --needed     git     python     pkg-config     meson     ninja     mingw-w64-x86_64-toolchain     mingw-w64-x86_64-ffmpeg     mingw-w64-x86_64-libjpeg-turbo     mingw-w64-x86_64-libplacebo     mingw-w64-x86_64-luajit     mingw-w64-x86_64-vulkan-headers
 
 # Install inputstream.adaptive dependencies
-pacman -S --noconfirm --needed     mingw-w64-x86_64-cmake     mingw-w64-x86_64-pugixml     mingw-w64-x86_64-bento4     mingw-w64-x86_64-nlohmann-json
+pacman -S --noconfirm --needed     mingw-w64-x86_64-cmake     mingw-w64-x86_64-pugixml     mingw-w64-x86_64-nlohmann-json
+
+# --- Build Bento4 from source ---
+echo "Cloning Bento4..."
+git clone https://github.com/axiomatic-systems/Bento4.git
+cd Bento4
+echo "Building Bento4..."
+mkdir cmakebuild
+cd cmakebuild
+cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
+make
+make install
+cd ../..
 
 # TODO: Install Kodi headers and cmake files
 # This is a placeholder. We need to get the Kodi headers and the FindKodi.cmake
